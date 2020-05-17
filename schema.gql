@@ -23,4 +23,5 @@ type Mutation {
 type Query {
   hello: String!
   cats: [CatType!]!
+  cat(id: String!): CatType!
 }

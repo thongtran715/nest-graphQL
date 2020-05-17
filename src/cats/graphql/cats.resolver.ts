@@ -17,6 +17,11 @@ export class CatsResolver {
     return this.catsService.findAll();
   }
 
+  @Query(() => CatType)
+  async cat(@Args('id') id: string) {
+    return this.catsService.findCatByID(id);
+  }
+
   @Mutation(() => CatType)
   async createCat(@Args('input') input: CatInput) {
     return this.catsService.create(input);
